@@ -47,6 +47,8 @@ class DailyImageFragment : Fragment() {
         wikitextInputLayout = view.findViewById(R.id.input_layout_wiki)
         wikitextEditText = view.findViewById(R.id.input_edit_text_wiki)
 
+
+
         //wikitextInputLayout.error = "MyError"
 
 //        wikitextInputLayout.setEndIconOnClickListener {
