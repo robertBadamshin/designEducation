@@ -1,12 +1,10 @@
 package com.mdfirst.dailyimage.ui
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -59,6 +57,31 @@ class DailyImageFragment : Fragment() {
 //        }
 
         setBottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
+
+        setBottomAppBar(view)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
+        inflater.inflate(R.menu.menu_bottom_bar, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.app_bar_fav -> Toast.makeText(context, "Favourite", Toast.LENGTH_SHORT).show()
+            R.id.app_bar_search -> Toast.makeText(context, "Search", Toast.LENGTH_SHORT).show()
+            android.R.id.home -> {
+                val activity = requireActivity()
+                BottomNavigationDrawerFragment().show(activity.supportFragmentManager, "tag")
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setBottomAppBar(view: View) {
+        val context = requireContext() as AppCompatActivity
+        context.setSupportActionBar(view.findViewById(R.id.bottom_app_bar))
+        setHasOptionsMenu(true)
     }
 
     private fun renderData(dailyImage: DailyImage) {
