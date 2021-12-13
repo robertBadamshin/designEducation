@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="MDFirstTextInputStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/teal_200</item>
+    </style>
+
+
+    <!-- show not working -->
+    <style name="MDFirstErrorTextInput">
+        <item name="android:textColor">@android:color/holo_orange_dark</item>
+    </style>
+</resources>
