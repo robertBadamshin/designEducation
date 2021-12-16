@@ -10,4 +10,19 @@
     <style name="MDFirstErrorTextInput">
         <item name="android:textColor">@android:color/holo_orange_dark</item>
     </style>
+
+    <style name="linkTextStyle">
+        <!-- remove when using styling_texview -->
+        <item name="android:textColor">@color/blue</item>
+        <!-- remove when using styling_texview -->
+        <item name="android:textSize">16sp</item>
+        <!-- not recommend to use -->
+        <item name="android:layout_marginStart">12dp</item>
+        <item name="android:letterSpacing">0.2</item>
+    </style>
+
+    <style name="MDSecondTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:letterSpacing">0.4</item>
+    </style>
+
 </resources>

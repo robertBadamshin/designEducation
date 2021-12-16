@@ -1,12 +1,14 @@
 package com.mdfirst.dailyimage.ui
 
 import android.content.Intent
+import android.content.res.Configuration
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -46,6 +48,29 @@ class DailyImageFragment : Fragment() {
         dailyImageView = view.findViewById(R.id.image_view_daily_image)
         wikitextInputLayout = view.findViewById(R.id.input_layout_wiki)
         wikitextEditText = view.findViewById(R.id.input_edit_text_wiki)
+
+//        wikitextEditText.setOnClickListener {
+//            val isNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+//            when (isNightTheme) {
+//                Configuration.UI_MODE_NIGHT_YES ->
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+//                Configuration.UI_MODE_NIGHT_NO ->
+//                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+//            }
+//        }
+
+
+        wikitextEditText.setOnClickListener {
+            val newTheme = when (currentTheme) {
+                R.style.Theme_MDFirst -> R.style.Theme_MDSecond
+                R.style.Theme_MDSecond -> R.style.Theme_MDFirst
+                else -> throw IllegalStateException("wrong theme")
+            }
+
+            currentTheme = newTheme
+
+            requireActivity().recreate()
+        }
 
         //wikitextInputLayout.error = "MyError"
 
@@ -88,5 +113,11 @@ class DailyImageFragment : Fragment() {
     private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
         bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+    }
+
+    companion object {
+
+        // just for example don't do this
+        var currentTheme = R.style.Theme_MDFirst
     }
 }

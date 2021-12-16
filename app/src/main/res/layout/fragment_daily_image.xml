@@ -43,7 +43,51 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword" />
 
+
         </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/text_view_styled_sample"
+            style="@style/linkTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="styled"
+            app:layout_constraintTop_toBottomOf="@id/input_layout_wiki" />
+
+        <TextView
+            android:id="@+id/text_view_unstyled_sample"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:letterSpacing="0.2"
+            android:text="unstyled"
+            android:textColor="#0000FF"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/text_view_styled_sample" />
+
+        <TextView
+            android:id="@+id/text_view_attribute_styled_sample"
+            style="@style/linkTextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:letterSpacing="0.5"
+            android:text="attribute styled"
+            android:textColor="#0000FF"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/text_view_unstyled_sample" />
+
+        <Button
+            android:id="@+id/view_background_selector"
+            android:layout_width="200dp"
+            android:layout_height="100dp"
+            android:text="Button Selector"
+            android:enabled="false"
+            android:background="@drawable/drawable_view_selector_sample"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_view_attribute_styled_sample" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- declare elements when need to use -->
+    <!--Regular-->
+    <style name="TextStyle.Regular.Blue">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="TextStyle.Regular.Blue.12sp">
+        <item name="android:textSize">@dimen/font_size_small</item>
+    </style>
+
+    <style name="TextStyle.Regular.Blue.14sp">
+        <item name="android:textSize">@dimen/font_size_medium</item>
+    </style>
+
+    <style name="TextStyle.Regular.Blue.16sp">
+        <item name="android:textSize">@dimen/font_size_large</item>
+    </style>
+    <!--/Regular-->
+
+    <!--Medium-->
+    <style name="TextStyle.Medium.Blue">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="TextStyle.Medium.Blue.14sp">
+        <item name="android:textSize">@dimen/font_size_medium</item>
+    </style>
+    <!--/Medium-->
+
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- sample, no recommend to use-->
+    <dimen name="margin_xxxx_small">2dp</dimen>
+    <dimen name="margin_xxx_small">3dp</dimen>
+    <dimen name="margin_xx_small">5dp</dimen>
+    <dimen name="margin_x_small">7dp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+
+    <!-- recommend to use with styles_textview -->
+    <dimen name="font_size_small">12sp</dimen>
+    <dimen name="font_size_medium">14sp</dimen>
+    <dimen name="font_size_large">16sp</dimen>
+</resources>

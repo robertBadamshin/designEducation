@@ -10,6 +10,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // call before set content view
+        setTheme(DailyImageFragment.currentTheme)
+
         setContentView(R.layout.activity_main)
 
         if (savedInstanceState == null) {
