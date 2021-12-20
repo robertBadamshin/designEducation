@@ -10,6 +10,8 @@ class ZoomOutPageTransformer : ViewPager2.PageTransformer {
         val pageWidth = view.width
         val pageHeight = view.height
 
+
+
         Log.d("VIEWPAGERTRANSOFRMER", "view: ${view.hashCode()}, position $position")
 
         when {
