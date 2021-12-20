@@ -17,4 +17,13 @@ class UniverseStatePagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragm
         return items.size
     }
 
+    // override if items mutable
+    override fun getItemId(position: Int): Long {
+        return super.getItemId(position)
+    }
+
+    // override if items mutable
+    override fun containsItem(itemId: Long): Boolean {
+        return super.containsItem(itemId)
+    }
 }
