@@ -1,21 +1,11 @@
 package com.mdfirst.dailyimage.ui
 
-import android.content.Intent
-import android.content.res.Configuration
-import android.net.Uri
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.ImageView
-import androidx.appcompat.app.AppCompatDelegate
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.*
 import coil.api.load
-import com.google.android.material.bottomsheet.BottomSheetBehavior
-import com.google.android.material.textfield.TextInputEditText
-import com.google.android.material.textfield.TextInputLayout
+import com.google.android.material.textfield.*
 import com.mdfirst.R
 import com.mdfirst.dailyimage.domain.DailyImage
 
@@ -27,8 +17,6 @@ class DailyImageFragment : Fragment() {
     private lateinit var wikitextInputLayout: TextInputLayout
     private lateinit var wikitextEditText: TextInputEditText
 
-    private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -38,7 +26,7 @@ class DailyImageFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View? {
         return inflater.inflate(R.layout.fragment_daily_image, container, false)
     }
@@ -83,10 +71,12 @@ class DailyImageFragment : Fragment() {
 //            startActivity(intent)
 //        }
 
-        setBottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
+        //setBottomSheetBehavior(view.findViewById(R.id.bottom_sheet_container))
     }
 
-    private fun renderData(dailyImage: DailyImage) {
+    private fun renderData(
+        dailyImage: DailyImage,
+    ) {
         when (dailyImage) {
             is DailyImage.Success -> {
                 val serverResponseData = dailyImage.serverResponseData
@@ -108,11 +98,6 @@ class DailyImageFragment : Fragment() {
                 // show error
             }
         }
-    }
-
-    private fun setBottomSheetBehavior(bottomSheet: ConstraintLayout) {
-        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
     }
 
     companion object {

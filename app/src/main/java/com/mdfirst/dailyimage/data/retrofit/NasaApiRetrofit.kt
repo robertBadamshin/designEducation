@@ -23,9 +23,7 @@ class NasaApiRetrofit {
 
     private fun createOkHttpClient(): OkHttpClient {
         val httpClient = OkHttpClient.Builder()
-        val loggingInterceptor = HttpLoggingInterceptor().setLevel(
-            HttpLoggingInterceptor.Level.BODY
-        )
+        val loggingInterceptor = HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
         httpClient.addInterceptor(loggingInterceptor)
         return httpClient.build()
     }
