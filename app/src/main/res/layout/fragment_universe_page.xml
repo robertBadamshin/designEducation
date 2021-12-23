@@ -6,6 +6,84 @@
     android:background="@color/black">
 
     <TextView
+        android:id="@+id/text_view_chain_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="1"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/text_view_chain_second"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_chain_second"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="2"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@id/text_view_chain_third"
+        app:layout_constraintStart_toEndOf="@id/text_view_chain_first"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_chain_third"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="3"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_view_chain_second"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/text_view_first_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="First Barrier View"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_chain_first" />
+
+    <TextView
+        android:id="@+id/text_view_second_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Second Barrier View Second"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_first_barrier" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier_sample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="end"
+        app:constraint_referenced_ids="text_view_first_barrier, text_view_second_barrier" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_sample"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <View
+        android:layout_width="10dp"
+        android:layout_height="20dp"
+        android:background="@color/teal_200"
+        app:layout_constraintBottom_toBottomOf="@id/text_view_second_barrier"
+        app:layout_constraintStart_toEndOf="@id/barrier_sample"
+        app:layout_constraintTop_toTopOf="@id/text_view_first_barrier" />
+
+    <TextView
         android:id="@+id/text_view_universe_page_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,5 +92,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/text_view_planet_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/planet_description"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_view_universe_page_title"
+        app:layout_constraintWidth_percent="0.7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

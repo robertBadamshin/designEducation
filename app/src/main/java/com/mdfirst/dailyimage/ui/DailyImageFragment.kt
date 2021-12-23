@@ -17,12 +17,6 @@ class DailyImageFragment : Fragment() {
     private lateinit var wikitextInputLayout: TextInputLayout
     private lateinit var wikitextEditText: TextInputEditText
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        viewModel.getImageData().observe(this, { dailyImage -> renderData(dailyImage) })
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -36,6 +30,9 @@ class DailyImageFragment : Fragment() {
         dailyImageView = view.findViewById(R.id.image_view_daily_image)
         wikitextInputLayout = view.findViewById(R.id.input_layout_wiki)
         wikitextEditText = view.findViewById(R.id.input_edit_text_wiki)
+
+        viewModel.getImageData().observe(viewLifecycleOwner, { dailyImage -> renderData(dailyImage) })
+        viewModel.sendServerRequest()
 
 //        wikitextEditText.setOnClickListener {
 //            val isNightTheme = resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK

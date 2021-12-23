@@ -12,17 +12,16 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class DailyImageViewModel(
-    private val liveDataForViewToObserve: MutableLiveData<DailyImage> = MutableLiveData(),
+    private val dailyImageLiveData: MutableLiveData<DailyImage> = MutableLiveData(),
     private val retrofitImpl: NasaApiRetrofit = NasaApiRetrofit(),
 ) : ViewModel() {
 
     fun getImageData(): LiveData<DailyImage> {
-        sendServerRequest()
-        return liveDataForViewToObserve
+        return dailyImageLiveData
     }
 
-    private fun sendServerRequest() {
-        liveDataForViewToObserve.value = DailyImage.Loading(null)
+    fun sendServerRequest() {
+        dailyImageLiveData.value = DailyImage.Loading(null)
 
         val apiKey = BuildConfig.NASA_API_KEY
         if (apiKey.isBlank()) {
@@ -43,7 +42,7 @@ class DailyImageViewModel(
             }
 
             override fun onFailure(call: Call<NASAImageResponse>, t: Throwable) {
-                liveDataForViewToObserve.value = DailyImage.Error(t)
+                dailyImageLiveData.value = DailyImage.Error(t)
             }
         }
 
@@ -52,15 +51,15 @@ class DailyImageViewModel(
 
     private fun handleImageResponse(response: Response<NASAImageResponse>) {
         if (response.isSuccessful && response.body() != null) {
-            liveDataForViewToObserve.value = DailyImage.Success(response.body()!!)
+            dailyImageLiveData.value = DailyImage.Success(response.body()!!)
             return
         }
 
         val message = response.message()
         if (message.isNullOrEmpty()) {
-            liveDataForViewToObserve.value = DailyImage.Error(Throwable("Unidentified error"))
+            dailyImageLiveData.value = DailyImage.Error(Throwable("Unidentified error"))
         } else {
-            liveDataForViewToObserve.value = DailyImage.Error(Throwable(message))
+            dailyImageLiveData.value = DailyImage.Error(Throwable(message))
         }
     }
 }

@@ -5,7 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
 import com.mdfirst.dailyimage.ui.DailyImageFragment
-import com.mdfirst.viewpagersample.UniverseFragment
+import com.mdfirst.motionlayoutsample.MotionLayoutFragment
+import com.mdfirst.scrollableappbar.PurchaseDetailFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -20,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                add<UniverseFragment>(R.id.fragment_container)
+                add<MotionLayoutFragment>(R.id.fragment_container)
             }
         }
     }
