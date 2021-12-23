@@ -2,7 +2,6 @@ package com.mdfirst.viewpagersample
 
 import android.os.Bundle
 import android.view.*
-import android.widget.AdapterView
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
