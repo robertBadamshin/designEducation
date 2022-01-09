@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
 import androidx.fragment.app.Fragment
-import coil.api.load
+import com.bumptech.glide.Glide
 import com.mdfirst.R
 
 class PurchaseDetailFragment : Fragment() {
@@ -24,6 +24,6 @@ class PurchaseDetailFragment : Fragment() {
 
         expandedToolbarBackgroundImageView = view.findViewById(R.id.image_view_expanded_toolbar_background)
         val url = "https://taurus-m.ru/upload/iblock/16a/fk2dflirfrb8bn6tanuj5f1cjhd38knj.png"
-        expandedToolbarBackgroundImageView.load(url)
+        Glide.with(this).load(url).into(expandedToolbarBackgroundImageView)
     }
 }

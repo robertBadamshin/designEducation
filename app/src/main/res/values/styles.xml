@@ -22,7 +22,7 @@
     </style>
 
     <style name="MDSecondTextViewStyle" parent="android:Widget.TextView">
-        <item name="android:letterSpacing">0.4</item>
+        <item name="android:letterSpacing">0.05</item>
     </style>
 
     <style name="CollapsingToolbarTextAppearance" parent="android:Widget.TextView">

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.*
 import android.widget.ImageView
 import androidx.fragment.app.*
-import coil.api.load
+import com.bumptech.glide.Glide
 import com.google.android.material.textfield.*
 import com.mdfirst.R
 import com.mdfirst.dailyimage.domain.DailyImage
@@ -44,7 +44,6 @@ class DailyImageFragment : Fragment() {
 //            }
 //        }
 
-
         wikitextEditText.setOnClickListener {
             val newTheme = when (currentTheme) {
                 R.style.Theme_MDFirst -> R.style.Theme_MDSecond
@@ -81,11 +80,8 @@ class DailyImageFragment : Fragment() {
                 if (url.isNullOrEmpty()) {
                     // show error - empty link
                 } else {
-                    dailyImageView.load(url) {
-                        lifecycle(this@DailyImageFragment)
-                        error(R.drawable.ic_image_error)
-                        placeholder(R.drawable.ic_empty_image)
-                    }
+                    Glide.with(requireContext()).load(url).error(R.drawable.ic_image_error)
+                        .placeholder(R.drawable.ic_empty_image).into(dailyImageView)
                 }
             }
             is DailyImage.Loading -> {
