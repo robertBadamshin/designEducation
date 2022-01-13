@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.*
 import com.mdfirst.dailyimage.ui.DailyImageFragment
 import com.mdfirst.recyclerview.ui.RecyclerViewSampleFragment
+import com.mdfirst.textsamples.ui.TextSampleFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         if (savedInstanceState == null) {
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                add<RecyclerViewSampleFragment>(R.id.fragment_container)
+                add<TextSampleFragment>(R.id.fragment_container)
             }
         }
     }

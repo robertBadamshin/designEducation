@@ -18,6 +18,10 @@
     <style name="TextStyle.Regular.Blue.16sp">
         <item name="android:textSize">@dimen/font_size_large</item>
     </style>
+
+    <style name="TextStyle.Regular.Blue.20sp">
+        <item name="android:textSize">@dimen/font_size_xxlarge</item>
+    </style>
     <!--/Regular-->
 
     <!--Medium-->
@@ -29,5 +33,15 @@
         <item name="android:textSize">@dimen/font_size_medium</item>
     </style>
     <!--/Medium-->
+
+    <!--Bold-->
+    <style name="TextStyle.Bold.Blue">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+
+    <style name="TextStyle.Bold.Blue.16sp">
+        <item name="android:textSize">@dimen/font_size_medium</item>
+    </style>
+    <!--/Bold-->
 
 </resources>

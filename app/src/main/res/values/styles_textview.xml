@@ -3,6 +3,12 @@
 
     <style name="TextStyle" parent="Base.TextAppearance.AppCompat" />
 
+    <!--Bold-->
+    <style name="TextStyle.Bold">
+        <item name="android:fontFamily">sans-serif</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <!--Medium-->
     <style name="TextStyle.Medium">
         <item name="android:fontFamily">sans-serif-medium</item>
