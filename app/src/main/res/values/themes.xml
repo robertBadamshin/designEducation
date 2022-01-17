@@ -40,4 +40,8 @@
 
         <item name="textColorConnected">@android:color/holo_blue_bright</item>
     </style>
+
+    <style name="Theme.MDFirst.OldSplash">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
 </resources>
