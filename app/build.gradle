@@ -74,7 +74,6 @@ dependencies {
     // constraint layout - like relativeLayout or LinearLayout, but more efficient
     implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
 
-    //detekt 'io.gitlab.arturbosch.detekt:detekt-cli:1.0.0.M9'
-    //detekt 'io.gitlab.arturbosch.detekt:detekt-formatting:1.0.0.M9'
+    implementation 'androidx.core:core-splashscreen:1.0.0-beta01'
 
 }
